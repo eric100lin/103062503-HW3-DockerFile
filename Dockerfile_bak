@@ -1,0 +1,37 @@
+#FROM scratch
+FROM ubuntu:14.04
+MAINTAINER Tzu Hsiang Lin <thlin@pllab.cs.nthu.edu.tw>
+
+COPY index.html /var/www/html/index.html
+COPY rootfs/lib/x86_64-linux-gnu/libpcre.so.3 /lib/x86_64-linux-gnu/libpcre.so.3
+COPY rootfs/usr/lib/x86_64-linux-gnu/libaprutil-1.so.0 /usr/lib/x86_64-linux-gnu/libaprutil-1.so.0
+COPY rootfs/usr/lib/x86_64-linux-gnu/libapr-1.so.0 /usr/lib/x86_64-linux-gnu/libapr-1.so.0
+COPY rootfs/lib/x86_64-linux-gnu/libpthread.so.0 /lib/x86_64-linux-gnu/libpthread.so.0
+COPY rootfs/lib/x86_64-linux-gnu/libc.so.6 /lib/x86_64-linux-gnu/libc.so.6
+COPY rootfs/lib/x86_64-linux-gnu/libuuid.so.1 /lib/x86_64-linux-gnu/libuuid.so.1
+COPY rootfs/lib/x86_64-linux-gnu/librt.so.1 /lib/x86_64-linux-gnu/librt.so.1
+COPY rootfs/lib/x86_64-linux-gnu/libcrypt.so.1 /lib/x86_64-linux-gnu/libcrypt.so.1
+COPY rootfs/lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libdl.so.2
+COPY rootfs/lib/x86_64-linux-gnu/libexpat.so.1 /lib/x86_64-linux-gnu/libexpat.so.1
+COPY rootfs/lib64/ld-linux-x86-64.so.2 /lib64/ld-linux-x86-64.so.2
+COPY rootfs/etc/apache2 /etc/apache2
+COPY rootfs/usr/sbin/apache2 /usr/sbin/apache2
+COPY rootfs/usr/sbin/apache2ctl /usr/sbin/apache2ctl
+COPY rootfs/usr/sbin/apachectl /usr/sbin/apachectl
+COPY rootfs/usr/sbin/split-logfile /usr/sbin/split-logfile
+COPY rootfs/usr/sbin/a2query /usr/sbin/a2query
+COPY rootfs/usr/sbin/apachectl /usr/sbin/apachectl
+COPY rootfs/usr/sbin/a2ensite /usr/sbin/a2ensite
+COPY rootfs/usr/sbin/a2enconf /usr/sbin/a2enconf
+COPY rootfs/usr/sbin/a2dissite /usr/sbin/a2dissite
+COPY rootfs/usr/sbin/a2dismod /usr/sbin/a2dismod
+COPY rootfs/usr/sbin/a2disconf /usr/sbin/a2disconf
+COPY rootfs/usr/sbin/apache2 /usr/sbin/apache2
+COPY rootfs/usr/sbin/httxt2dbm /usr/sbin/httxt2dbm
+COPY rootfs/etc/init.d/apache2 /etc/init.d/apache2
+COPY rootfs/bin/sh /bin/sh
+COPY rootfs/bin/bash /bin/bash
+COPY rootfs/bin/dash /bin/dash
+
+EXPOSE 80
+ENTRYPOINT ["/bin/bash"]
